@@ -28,6 +28,11 @@ public class FirstRoute extends EndpointRouteBuilder {
                 .log("test")
                 .process(this::getDataSource2)
                 .process(p-> p.getAllProperties())
+                .to(jms("queue:lol").connectionFactory(connectionFactory))
+                ;
+
+        from(jms("queue:lol"))
+                .log("after queue consuming")
                 ;
     }
 
