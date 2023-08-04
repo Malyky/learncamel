@@ -31,9 +31,9 @@ public class FirstRoute extends EndpointRouteBuilder {
                 .to(jms("queue:lol").connectionFactory(connectionFactory))
                 ;
 
-        from(jms("queue:lol"))
+      /*  from(jms("queue:lol"))
                 .log("after queue consuming")
-                ;
+                ;*/
     }
 
     public void getDataSource2(Exchange exchange) {
